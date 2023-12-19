@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './utils/material.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UtilsModule } from './utils/utils/utils.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,8 +13,8 @@ import { UtilsModule } from './utils/utils/utils.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    UtilsModule,
   ],
+  exports: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
