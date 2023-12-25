@@ -21,7 +21,16 @@
       </div>
     </div>
   </div>
-
+  <button
+    class="btn-play"
+    mat-fab
+    extended
+    color="primary"
+    (click)="play = !play"
+  >
+    <mat-icon>{{ play ? "pause" : "play_arrow" }}</mat-icon>
+    {{ play ? "Pause" : "Play" }}
+  </button>
   <footer>
     <div
       cdkDropList

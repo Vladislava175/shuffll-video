@@ -54,6 +54,11 @@
 .video {
   height: 20vh;
 }
+.btn-play {
+  right: 0;
+  position: absolute;
+  margin: 20px;
+}
 footer {
   background-color: #083d77;
   height: 22vh;

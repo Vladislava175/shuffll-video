@@ -11,9 +11,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  test($event: any) {
-    console.info('app component', $event);
-  }
+  play: boolean = false;
   todo: string[] = [
     'https://content.shuffll.com/files/background-music/1.mp4',
     'https://content.shuffll.com/files/background-music/1.mp4',
