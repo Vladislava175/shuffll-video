@@ -13,6 +13,7 @@
         <video
           controls
           preload="auto"
+          (playing)="onPlayingVideo($event)"
           data-config="some-js-object-here"
           class="video"
         >
@@ -26,7 +27,9 @@
     mat-fab
     extended
     color="primary"
-    (click)="play = !play"
+    [disabled]="!done.length"
+    (keyup)="play = !play"
+    (click)="startNextVideo()"
   >
     <mat-icon>{{ play ? "pause" : "play_arrow" }}</mat-icon>
     {{ play ? "Pause" : "Play" }}
@@ -39,13 +42,21 @@
       (cdkDropListDropped)="drop($event)"
     >
       <div *ngIf="!done.length">
-        <h1 style="text-align: center">Tap scence here</h1>
+        <h1 style="height: 22vh">Tap scence here</h1>
       </div>
 
-      <div class="box" *ngFor="let item of done" cdkDrag style="display: flex">
+      <div
+        class="box"
+        *ngFor="let item of done; let i = index"
+        cdkDrag
+        style="display: flex"
+      >
         <!-- {{ item }} -->
         <video
           controls
+          [id]="i"
+          (playing)="onPlayingVideo($event)"
+          (ended)="startNextVideo(true)"
           preload="auto"
           data-config="some-js-object-here"
           class="video"
