@@ -59,6 +59,24 @@
   position: absolute;
   margin: 20px;
 }
+.ruler {
+  top: 0;
+  height: 5vh;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10vw;
+}
+
+.vertical {
+  border-left: 5px solid rgb(231, 146, 10);
+  margin-right: 0;
+  height: 5vh;
+  position: absolute;
+}
+.ruler-number {
+  color: white;
+}
 footer {
   width: 100%;
   position: absolute;

@@ -6,7 +6,7 @@
       cdkDropList
       [cdkDropListData]="todo"
       class="list"
-      (cdkDropListDropped)="drop($event)"
+      (cdkDropListDropped)="fromListToList($event, false)"
     >
       <div class="box" *ngFor="let item of todo" cdkDrag>
         <!-- {{ item }} -->
@@ -35,14 +35,20 @@
     {{ play ? "Pause" : "Play" }}
   </button>
   <footer>
+    <div class="ruler" id="ruler">
+      <p class="ruler-number" [id]="'ruler-' + s" *ngFor="let s of seconds">
+        {{ s }}
+      </p>
+      <div class="vertical" *ngIf="seconds.length"></div>
+    </div>
     <div
       cdkDropList
       [cdkDropListData]="done"
       class="list"
-      (cdkDropListDropped)="drop($event)"
+      (cdkDropListDropped)="fromListToList($event)"
     >
       <div *ngIf="!done.length">
-        <h1 style="height: 22vh">Tap scence here</h1>
+        <h1 style="height: 18vh">Tap scence here</h1>
       </div>
 
       <div
